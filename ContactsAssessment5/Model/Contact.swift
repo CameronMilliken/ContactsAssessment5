@@ -42,7 +42,7 @@ class Contact {
             let email = ckRecord[ContactKeys.emailKey] as? String else { return nil }
             self.init(name: name, phoneNumber: phoneNumber, email: email, ckRecordId: ckRecord.recordID)
     }
-} // End of Class
+}
 
 // Extension
 extension CKRecord {
