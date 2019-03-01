@@ -84,6 +84,7 @@ class ContactController {
             CKContainer.default().privateCloudDatabase.add(operation)
         }
     }
+    
     // Delete
     func deleteContact(contact: Contact, completion: @escaping successCompletion) {
         guard let index = contacts.index(of: contact) else { completion(false) ; return }

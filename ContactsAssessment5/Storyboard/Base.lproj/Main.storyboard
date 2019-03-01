@@ -13,13 +13,13 @@
         <!--Contacts-->
         <scene sceneID="sfY-I8-6F9">
             <objects>
-                <tableViewController id="3QC-yj-VN9" sceneMemberID="viewController">
+                <tableViewController id="3QC-yj-VN9" customClass="ContactListTableViewController" customModule="ContactsAssessment5" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="o41-2V-YMt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="toDetailVC" id="F9d-Au-4Yr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" id="F9d-Au-4Yr">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F9d-Au-4Yr" id="2HR-g9-poI">
@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Uh1-dW-Nfz" kind="show" id="sEy-zg-hmq"/>
+                                    <segue destination="Uh1-dW-Nfz" kind="show" identifier="toDetailVC" id="sEy-zg-hmq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -51,7 +51,7 @@
         <!--Add Contact-->
         <scene sceneID="wX8-bk-fix">
             <objects>
-                <viewController id="Uh1-dW-Nfz" sceneMemberID="viewController">
+                <viewController id="Uh1-dW-Nfz" customClass="ContactDetailViewController" customModule="ContactsAssessment5" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nYm-5w-0Fh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,8 +124,17 @@
                         <viewLayoutGuide key="safeArea" id="MKI-ka-n2b"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Contact" id="yTO-zy-bWI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Hc-Yo-odb"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="2Hc-Yo-odb">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="Uh1-dW-Nfz" id="ebd-KX-LFF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="WnQ-iT-nAL" id="50G-eE-9sa"/>
+                        <outlet property="nameTextField" destination="cPH-Zk-nwX" id="dCI-lX-ETT"/>
+                        <outlet property="phoneNumberTextField" destination="DNB-LD-NLJ" id="HJi-sq-urD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEK-0q-Z8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
