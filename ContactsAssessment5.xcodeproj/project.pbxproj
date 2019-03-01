@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		B45C4C8122298FD00050C797 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C4C8022298FD00050C797 /* AppDelegate.swift */; };
-		B45C4C8322298FD00050C797 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C4C8222298FD00050C797 /* ViewController.swift */; };
 		B45C4C8622298FD00050C797 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C4C8422298FD00050C797 /* Main.storyboard */; };
 		B45C4C8822298FD10050C797 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45C4C8722298FD10050C797 /* Assets.xcassets */; };
 		B45C4C8B22298FD10050C797 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C4C8922298FD10050C797 /* LaunchScreen.storyboard */; };
+		B45C4C97222991080050C797 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B45C4C96222991080050C797 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B45C4C7D22298FD00050C797 /* ContactsAssessment5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsAssessment5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45C4C8022298FD00050C797 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B45C4C8222298FD00050C797 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B45C4C8522298FD00050C797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B45C4C8722298FD10050C797 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45C4C8A22298FD10050C797 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B45C4C8C22298FD10050C797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B45C4C94222991040050C797 /* ContactsAssessment5.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContactsAssessment5.entitlements; sourceTree = "<group>"; };
+		B45C4C96222991080050C797 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B45C4C97222991080050C797 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +42,7 @@
 			children = (
 				B45C4C7F22298FD00050C797 /* ContactsAssessment5 */,
 				B45C4C7E22298FD00050C797 /* Products */,
+				B45C4C95222991080050C797 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +57,38 @@
 		B45C4C7F22298FD00050C797 /* ContactsAssessment5 */ = {
 			isa = PBXGroup;
 			children = (
+				B45C4C94222991040050C797 /* ContactsAssessment5.entitlements */,
+				B45C4C93222990F40050C797 /* Storyboard */,
+				B45C4C92222990EA0050C797 /* Resources */,
+			);
+			path = ContactsAssessment5;
+			sourceTree = "<group>";
+		};
+		B45C4C92222990EA0050C797 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				B45C4C8022298FD00050C797 /* AppDelegate.swift */,
-				B45C4C8222298FD00050C797 /* ViewController.swift */,
-				B45C4C8422298FD00050C797 /* Main.storyboard */,
 				B45C4C8722298FD10050C797 /* Assets.xcassets */,
 				B45C4C8922298FD10050C797 /* LaunchScreen.storyboard */,
 				B45C4C8C22298FD10050C797 /* Info.plist */,
 			);
-			path = ContactsAssessment5;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B45C4C93222990F40050C797 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B45C4C8422298FD00050C797 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B45C4C95222991080050C797 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B45C4C96222991080050C797 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +123,14 @@
 				TargetAttributes = {
 					B45C4C7C22298FD00050C797 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,7 +170,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B45C4C8322298FD00050C797 /* ViewController.swift in Sources */,
 				B45C4C8122298FD00050C797 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,9 +316,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ContactsAssessment5/ContactsAssessment5.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64C9SBSJXP;
-				INFOPLIST_FILE = ContactsAssessment5/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ContactsAssessment5/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,9 +335,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ContactsAssessment5/ContactsAssessment5.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64C9SBSJXP;
-				INFOPLIST_FILE = ContactsAssessment5/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ContactsAssessment5/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
